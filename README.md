@@ -106,24 +106,24 @@ sudo apt install samba
 ---
 
 ## Roadmap
--Core YAML logging with FastAPI
--Mood, CBT, journal, sleep, and habit tracking
- -Weekly recap placeholder
- -GitHub integration with version control
- -PyQt-based dashboard (AvranOS)
- -GPT-powered schedule generator and check-in system
- -CLI command toolkit
- -Modular plugin system (calendar scraping, media logging, etc.)
- -Mobile UI (AvranOS Lite)
- -Voice interface (HQ Kern)
+- Core YAML logging with FastAPI
+- Mood, CBT, journal, sleep, and habit tracking
+- Weekly recap placeholder
+- GitHub integration with version control
+- PyQt-based dashboard (AvranOS)
+- GPT-powered schedule generator and check-in system
+- CLI command toolkit
+- Modular plugin system (calendar scraping, media logging, etc.)
+- Mobile UI (AvranOS Lite)
+- Voice interface (HQ Kern)
 
  ---
 
  ## Security and Privacy
--All logs stored locally in plain text YAML
--No data is uploaded unless explicitly configured (e.g. OpenAI API)
--.env, secrets/, and filing_cabinet/**/*.yaml are excluded from version control via .gitignore
--Future encryption layers planned for highly sensitive logs
+- All logs stored locally in plain text YAML
+- No data is uploaded unless explicitly configured (e.g. OpenAI API)
+- .env, secrets/, and filing_cabinet/**/*.yaml are excluded from version control via .gitignore
+- Future encryption layers planned for highly sensitive logs
 
 ---
 
