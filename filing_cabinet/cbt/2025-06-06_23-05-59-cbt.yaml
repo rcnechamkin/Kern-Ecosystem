@@ -1,8 +1,0 @@
-automatic_thought: This is probably broken
-distortions:
-- catastrophizing
-emotions:
-- anxious
-rational_response: The server is running fine.
-resolution: Just needed curl on the right port
-situation: Testing from CLI
