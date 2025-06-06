@@ -9,6 +9,8 @@
 The Kern Ecosystem is designed as a fully modular personal assistant framework. It leverages structured YAML data, local FastAPI services, and OpenAI’s GPT models to provide meaningful insights, reflections, and system interactions. The ecosystem is intended for developers, creators, and productivity-minded individuals who seek a more conscious, intentional relationship with their digital systems.
 This repository is the **master hub** of the Kern Ecosystem.
 
+---
+
 ### Core Components (or "Kern Instances")
 
 - **Avrana** — The backend brain. Runs all server-side logic via FastAPI, handling structured logs, calendar sync, recap generation, and OpenAI interactions.
