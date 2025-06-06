@@ -1,0 +1,6 @@
+summary: Today was a huge step in building the Kern ecosystem.
+highlights:
+  -Created working mood tracker API
+  -Hooked up jounral and scheudle endpoints
+  -Practice some arcane CLI magic
+tags: [avrana, progress, fastapi]
