@@ -48,26 +48,21 @@ This repository is the **master hub** of the Kern Ecosystem.
 
 ---
 
-## Project Structure
+
+## Avrana Structure
 
 ```bash
-kern-ecosystem/
-├── backend/             # Avrana: FastAPI routes and logic
-├── frontend/            # AvranOS: GUI layer
-├── mobile/              # AvranOS Lite
-├── calendar/            # Kern Calendar sync + scheduling tools
-├── filing_cabinet/      # Structured logs (CBT, moods, habits)
-├── auth/                # Optional permissions & token logic
-├── avranos_gui/         # GUI widget logic & sprite interaction
-├── config/              # Config files and YAML profiles
-├── data/                # SQLite snapshots, backups, etc.
-├── secrets/             # OpenAI keys, login tokens (gitignored)
-├── logs/                # CLI logs, error tracking
-├── scheduler/           # Recap generators, task engines
-├── utils/               # CLI tools, file parsers, formatters
-├── main.py              # Entry point to FastAPI
-├── .gitignore           # Hides venv/, secrets, YAML logs
-└── README.md            # This file
+avrana/
+├── api/ # FastAPI endpoints
+│ └── routes/ # Modular route files
+├── filing_cabinet/ # Local YAML data logs (moods, CBT, etc.)
+├── scheduler/ # Recap generators, calendar integration
+├── secrets/ # API tokens, env files (gitignored)
+├── logs/ # Internal log system
+├── tests/ # (Coming soon)
+├── main.py # Server entrypoint
+├── README.md
+└── .gitignore
 ```
 
 ---
@@ -102,7 +97,8 @@ python main.py
 ```bash
 sudo apt install samba
 # Configure access to /filing_cabinet/ in smb.conf
-```   
+```
+
 ---
 
 ## Roadmap
@@ -117,7 +113,31 @@ sudo apt install samba
 - Mobile UI (AvranOS Lite)
 - Voice interface (HQ Kern)
 
- ---
+---
+
+## Future Project Structure
+
+```bash
+kern-ecosystem/
+├── backend/             # Avrana: FastAPI routes and logic
+├── frontend/            # AvranOS: GUI layer
+├── mobile/              # AvranOS Lite
+├── calendar/            # Kern Calendar sync + scheduling tools
+├── filing_cabinet/      # Structured logs (CBT, moods, habits)
+├── auth/                # Optional permissions & token logic
+├── avranos_gui/         # GUI widget logic & sprite interaction
+├── config/              # Config files and YAML profiles
+├── data/                # SQLite snapshots, backups, etc.
+├── secrets/             # OpenAI keys, login tokens (gitignored)
+├── logs/                # CLI logs, error tracking
+├── scheduler/           # Recap generators, task engines
+├── utils/               # CLI tools, file parsers, formatters
+├── main.py              # Entry point to FastAPI
+├── .gitignore           # Hides venv/, secrets, YAML logs
+└── README.md            # This file
+```
+
+---
 
  ## Security and Privacy
 - All logs stored locally in plain text YAML
