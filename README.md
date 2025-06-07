@@ -1,5 +1,5 @@
-[![Status: In Development](https://img.shields.io/badge/status-in_development-yellow)]()
 # Kern Ecosystem
+[![Status: In Development](https://img.shields.io/badge/status-in_development-yellow)]()
 
 **Modular, extensible, and intelligent. The Kern Ecosystem is a unified AI-powered personal operating environment for productivity, habit tracking, emotional reflection, and task automation.**
 
@@ -50,7 +50,7 @@ This repository is the **master hub** of the Kern Ecosystem.
 ---
 
 
-## Avrana Structure
+## Current Avrana File Layout
 
 ```bash
 avrana/
@@ -99,13 +99,30 @@ python main.py
 sudo apt install samba
 # Configure access to /filing_cabinet/ in smb.conf
 ```
+---
+
+## Example Manual API Request
+
+```bash
+curl -X POST http://127.0.0.1:8000/cbt/log \
+     -H "Content-Type: application/json" \
+     -d '{
+        "date": "2025-06-06",
+        "mood": "anxious but focused",
+        "thought_patterns": [
+            "catastrophizing",
+            "all-or-nothing thinking"
+        ],
+        "reframing": "I’m not doomed. I’m just overwhelmed, and that’s temporary."
+     }'
+```
 
 ---
 
 ## Roadmap
 - Core YAML logging with FastAPI
 - Mood, CBT, journal, sleep, and habit tracking
-- Weekly recap placeholder
+- Weekly recap generator
 - GitHub integration with version control
 - PyQt-based dashboard (AvranOS)
 - GPT-powered schedule generator and check-in system
@@ -116,7 +133,8 @@ sudo apt install samba
 
 ---
 
-## Future Project Structure
+<details>
+Planned Kern Ecosystem Layout (Monorepo)
 
 ```bash
 kern-ecosystem/
@@ -137,6 +155,7 @@ kern-ecosystem/
 ├── .gitignore           # Hides venv/, secrets, YAML logs
 └── README.md            # This file
 ```
+</details>
 
 ---
 
