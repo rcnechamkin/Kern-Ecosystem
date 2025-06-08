@@ -1,7 +1,7 @@
 # Kern Ecosystem
 [![Status: In Development](https://img.shields.io/badge/status-in_development-yellow)]()
 
-**Modular, extensible, and intelligent. The Kern Ecosystem is a unified AI-powered personal operating environment for productivity, habit tracking, emotional reflection, and task automation.**
+**Modular, extensible, and intelligent. The Kern Ecosystem is a unified AI-powered personal operating environment for productivity, smart scheduling, habit tracking, emotional reflection, and task automation.**
 
 ---
 
