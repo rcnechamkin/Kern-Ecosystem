@@ -1,0 +1,24 @@
+# Ignore Python cache and build
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Ignore virtual environment
+venv/
+
+# Ignore local environment and config secrets
+.env
+secrets/
+*.env
+
+# Ignore runtime logs
+logs/
+
+# Ignore local OS artifacts
+.DS_Store
+Thumbs.db
+
+# Ignore YAML logs and personal data
+filing_cabinet/**/*.yaml

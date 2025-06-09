@@ -1,13 +1,10 @@
 from fastapi import FastAPI
-from api.routes import ping
-from api.routes import moods
 from api.routes import cbt, habits, activity, sleep
 from api.routes import moods, recap, journal, schedule
-import uvicorn
+from api.routes import ping, journals
 
 def start_api():
     app = FastAPI(title="Avrana Core API")
-
 
     # Internal APIs
     app.include_router(cbt.router)
@@ -19,9 +16,8 @@ def start_api():
     app.include_router(journal.router)
     app.include_router(schedule.router)
 
-    # Include routes
+    # Global routers
     app.include_router(ping.router)
+    app.include_router(journals.router)
 
-    # Run locally (for development)
-    uvicorn.run(app, host="127.0.0.1", port=8000)
-
+    return app  # ✅ RETURN — DO NOT run uvicorn here
