@@ -25,3 +25,4 @@ Thumbs.db
 # Ignore YAML logs and personal data
 filing_cabinet/**/*.yaml
 blackboxes/uploads/
+kern_secrets/
