@@ -4,13 +4,15 @@ __pycache__/
 *.egg-info/
 build/
 dist/
+*.pyc
+*.log
 
 # Ignore virtual environment
 venv/
 
 # Ignore local environment and config secrets
 .env
-secrets/
+kern_secrets/
 *.env
 
 # Ignore runtime logs
@@ -22,3 +24,4 @@ Thumbs.db
 
 # Ignore YAML logs and personal data
 filing_cabinet/**/*.yaml
+blackboxes/uploads/

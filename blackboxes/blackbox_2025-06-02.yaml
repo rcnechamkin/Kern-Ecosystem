@@ -1,8 +1,17 @@
 data:
   activity: []
   cbt: []
-  habits: []
+  habits:
+  - Test_text: I did not do the work today.
+    date: 2025-06-04
   journals: []
   moods: []
+upcoming_calendar:
+- date: '2025-06-10'
+  name: API test
+  time: '12:30'
+- date: '2025-06-11'
+  name: Work
+  time: 04:00
 week_of: '2025-06-02'
 week_range: 2025-06-02 to 2025-06-08
