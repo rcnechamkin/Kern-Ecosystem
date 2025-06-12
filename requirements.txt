@@ -1,10 +1,24 @@
-blinker==1.9.0
-click==8.2.1
-Flask==3.1.1
-itsdangerous==2.2.0
-Jinja2==3.1.6
-MarkupSafe==3.0.2
-python-dotenv==1.1.0
-PyYAML==6.0.2
-tinydb==4.8.2
-Werkzeug==3.1.3
+# Core framework
+fastapi
+uvicorn[standard]
+
+# OpenAI + Kern voice
+openai>=1.0.0
+python-dotenv
+PyYAML
+python-gnupg
+
+# Async requests / fallback utilities
+httpx
+python-multipart
+
+# Optional: Local storage & templating (keep if still in use)
+tinydb
+Jinja2
+Flask
+
+# Bonus
+pytz
+pendulum
+rich
+watchdog

@@ -36,22 +36,21 @@ def load_kern_personality() -> str:
     return VOICE_PATH.read_text().strip()
 
 
-def kern_chat(messages, model="gpt-3.5-turbo", temperature=0.7):
-    """Send a message to OpenAI with AIRIK and Kern voice system prompts enforced."""
+def kern_chat(intent: str, user_input: str, model="gpt-3.5-turbo", temperature=0.7):
+    """Builds OpenAI-style messages, injects AIRIK and Kern tone, and sends chat request."""
     verify_signature()
 
     airik_prompt = load_airik_as_string()
     kern_voice = load_kern_personality()
 
-    full_messages = [
+    messages = [
         {"role": "system", "content": airik_prompt},
         {"role": "system", "content": kern_voice},
-        *messages
+        {"role": "user", "content": f"[Intent: {intent}]\n{user_input}"}
     ]
 
     return openai.chat.completions.create(
         model=model,
-        messages=full_messages,
+        messages=messages,
         temperature=temperature
     )
-

@@ -7,11 +7,8 @@ data:
   journals: []
   moods: []
 upcoming_calendar:
-- date: '2025-06-10'
-  name: API test
-  time: '12:30'
-- date: '2025-06-11'
+- date: '2025-06-12'
   name: Work
-  time: 04:00
+  time: 05:30
 week_of: '2025-06-02'
 week_range: 2025-06-02 to 2025-06-08
