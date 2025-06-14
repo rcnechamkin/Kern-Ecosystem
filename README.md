@@ -147,20 +147,25 @@ curl -X POST http://127.0.0.1:8000/cbt/log \
 
 ## Roadmap
 Phase	        Goals
+
 ✅ Phase 1	Backend, filing system, API, AIRIK enforcement
+
 ✅ Phase 2	Avrana migration, GPG signing, Codex design
+
 🔜 Phase 3	Build Codex intent router + schedule planner
+
 🔜 Phase 4	AvranOS frontend, drag-and-drop recap import
+
 🔜 Phase 5	HQ Kern voice interface + ambient journaling
 
 ---
 
 ## AIRIK – Summary of the Ethical Core
 
+**AIRIK** is the ethical backbone of the Kern Ecosystem. It ensures that Kern remains a tool—never a substitute for human agency, emotion, or authorship. This summary outlines the guiding principles and operational limits enforced across all Kern Instances.
+
 <details>
 <summary>Click to Expand the AIRIK (Artificial Intelligence Restraint and Integrity Kernel) Manifesto</summary>
-
-**AIRIK** is the ethical backbone of the Kern Ecosystem. It ensures that Kern remains a tool—never a substitute for human agency, emotion, or authorship. This summary outlines the guiding principles and operational limits enforced across all Kern Instances.
 
 ---
 
