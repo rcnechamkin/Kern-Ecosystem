@@ -9,6 +9,7 @@ The Kern Ecosystem gives structure to chaos, winks at your bad habits, and nudge
 ## Overview
 
 The Kern Ecosystem is designed as a fully modular personal assistant framework. It leverages structured YAML data, local FastAPI services, and OpenAI’s GPT models to provide meaningful insights, reflections, and system interactions. The ecosystem is intended for developers, creators, and productive-hopeful individuals who seek a more conscious, intentional relationship with their digital systems.
+
 Kern is snarky. She’s sardonic. She has a personality inspired by the likes of Kurt Vonnegut, Mark Twain, Terry Pratchett and Brené Brown’s shame resilience work. But she never forgets she’s a tool. (See: [AIRIK](#airik-manifesto)).
 
 This repository is the **master hub** of the Kern Ecosystem.
