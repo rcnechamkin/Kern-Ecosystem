@@ -146,17 +146,15 @@ curl -X POST http://127.0.0.1:8000/cbt/log \
 ---
 
 ## Roadmap
-Phase	        Goals
 
-✅ Phase 1	Backend, filing system, API, AIRIK enforcement
+| Phase     | Description                                                  |
+|-----------|--------------------------------------------------------------|
+| Phase 1   | ✅ Completed — Backend system, filing cabinet structure, API routes, and AIRIK enforcement in place. |
+| Phase 2   | ✅ Completed — Avrana migration to dedicated hardware, GPG signature verification, and Codex planning. |
+| Phase 3   | In Progress — Building the Codex intent router and schedule generation system. |
+| Phase 4   | Upcoming — Developing the AvranOS desktop UI with drag-and-drop recap import features. |
+| Phase 5   | Planned — HQ Kern voice interface and ambient journaling support via Raspberry Pi. |
 
-✅ Phase 2	Avrana migration, GPG signing, Codex design
-
-🔜 Phase 3	Build Codex intent router + schedule planner
-
-🔜 Phase 4	AvranOS frontend, drag-and-drop recap import
-
-🔜 Phase 5	HQ Kern voice interface + ambient journaling
 
 ---
 
