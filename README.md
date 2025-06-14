@@ -96,7 +96,8 @@ avrana/
 
 ## Getting Started
 
-# Getting Started with the Kern Ecosystem
+<details>
+<summary>Getting Started with the Kern Ecosystem</summary>
 
 To run the Kern Ecosystem locally, follow the steps below.  
 You'll need an OpenAI API key, and optionally a Google Calendar API key if you want to sync events via CalDAV.
@@ -175,6 +176,8 @@ sudo apt install samba
 Kern will refuse to run if `filing_cabinet/core/airik_manifesto.yaml` or its GPG signature is missing or tampered with.
 
 Use the override phrase ("Painter protocol revoked") only if you know what you’re doing.
+
+</details>
 
 ---
 
