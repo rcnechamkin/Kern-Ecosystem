@@ -4,7 +4,11 @@ import gnupg
 from pathlib import Path
 
 # === AIRIK Dependency Paths ===
-AIRIK_PATH = Path("filing_cabinet/core/airik_manifesto.yaml")
+# You can toggle this depending on whether you're enforcing full AIRIK or the compressed GPT version.
+USE_GPT_MANIFEST = True
+
+MANIFEST_FILENAME = "airik_manifesto_gpt.yaml" if USE_GPT_MANIFEST else "airik_manifesto.yaml"
+AIRIK_PATH = Path(f"filing_cabinet/core/{MANIFEST_FILENAME}")
 SIG_PATH = AIRIK_PATH.with_suffix(".yaml.asc")
 PUBKEY_PATH = Path("filing_cabinet/core/kern_pubkey.asc")
 
@@ -23,6 +27,15 @@ def load_airik_manifesto():
         sys.exit("AIRIK structure invalid. Root key 'airik_manifesto' not found.")
 
     return data
+
+# === Metadata Presence Validation ===
+def validate_metadata(data):
+    metadata = data["airik_manifesto"].get("creator_signature", {})
+    required_fields = ["name", "date", "digital_signature_required"]
+
+    missing = [field for field in required_fields if field not in metadata]
+    if missing:
+        sys.exit(f"Metadata missing required field(s): {', '.join(missing)}")
 
 # === Verify GPG Signature ===
 def verify_signature():
@@ -45,8 +58,9 @@ def verify_signature():
 
 # === Enforce AIRIK Runtime ===
 def enforce_airik():
-    print("Enforcing AIRIK...")
-    load_airik_manifesto()
+    print(f"Enforcing AIRIK from {AIRIK_PATH.name}...")
+    data = load_airik_manifesto()
+    validate_metadata(data)
     verify_signature()
     print("AIRIK manifest verified. System integrity confirmed.")
 
