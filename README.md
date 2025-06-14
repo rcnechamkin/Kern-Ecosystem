@@ -1,13 +1,16 @@
 # Kern Ecosystem
 [![Status: In Development](https://img.shields.io/badge/status-in_development-yellow)]()
 
-**Modular, extensible, and intelligent. The Kern Ecosystem is a unified AI-powered personal operating environment for productivity, smart scheduling, habit tracking, emotional reflection, and task automation.**
+**Modular, extensible, intelligent, and slightly judgmental. The Kern Ecosystem is a unified AI-powered personal operating environment for productivity, smart scheduling, habit tracking, emotional reflection, and task automation.**
+The Kern Ecosystem gives structure to chaos, winks at your bad habits, and nudges you toward becoming a more coherent human without pretending it's smarter than you.
 
 ---
 
 ## Overview
 
-The Kern Ecosystem is designed as a fully modular personal assistant framework. It leverages structured YAML data, local FastAPI services, and OpenAI’s GPT models to provide meaningful insights, reflections, and system interactions. The ecosystem is intended for developers, creators, and productivity-minded individuals who seek a more conscious, intentional relationship with their digital systems.
+The Kern Ecosystem is designed as a fully modular personal assistant framework. It leverages structured YAML data, local FastAPI services, and OpenAI’s GPT models to provide meaningful insights, reflections, and system interactions. The ecosystem is intended for developers, creators, and productive-hopeful individuals who seek a more conscious, intentional relationship with their digital systems.
+Kern is snarky. She’s sardonic. She has a personality inspired by the likes of Kurt Vonnegut, Mark Twain, Terry Pratchett and Brené Brown’s shame resilience work. But she never forgets she’s a tool. (See: [AIRIK](#airik-manifesto)).
+
 This repository is the **master hub** of the Kern Ecosystem.
 
 ---
@@ -25,13 +28,21 @@ This repository is the **master hub** of the Kern Ecosystem.
 
 ## Features
 
-- ✅ Local-first data logging using YAML + Git
-- ✅ Structured API access to mood, journal, habit, and CBT logs
-- ✅ Weekly "Black Box" recap generator (WIP)
-- ✅ OpenAI API integration for intelligent summaries and prompts
-- ✅ CalDAV calendar integration
-- ✅ CLI endpoints and future command system
-- ✅ Samba support for drag-and-drop recap ingestion
+- Local-first memory system using structured YAML
+
+- Secure, enforceable ethics layer (AIRIK)
+
+- GPT-powered journaling, mood tracking, CBT logs, and reframing
+
+- Weekly recap generator (blackbox.py)
+
+- Modular FastAPI architecture
+
+- GPG-signed memory files and authorship metadata
+
+- PyQt5 desktop widgets (WIP)
+
+- Voice interface, CLI dashboard, calendar sync, and more on the roadmap
 
 ---
 
@@ -54,16 +65,30 @@ This repository is the **master hub** of the Kern Ecosystem.
 
 ```bash
 avrana/
-├── api/ # FastAPI endpoints
-│ └── routes/ # Modular route files
-├── filing_cabinet/ # Local YAML data logs (moods, CBT, etc.)
-├── scheduler/ # Recap generators, calendar integration
-├── secrets/ # API tokens, env files (gitignored)
-├── logs/ # Internal log system
-├── tests/ # (Coming soon)
-├── main.py # Server entrypoint
+├── api/                    # FastAPI endpoints and routes
+│   ├── routes/             # Modular route files for journaling, mood, habits, etc.
+│   └── start_api.py        # FastAPI initialization
+├── auth/                   # Authentication modules (WIP)
+├── avranos_gui/            # PyQt5 widget logic (AvranOS frontend)
+├── blackboxes/            # Weekly YAML memory snapshots and blackbox generator
+├── config/                 # Configuration logic
+├── core/                   # Core functionality (AIRIK enforcement, LLM wrappers)
+│   └── llm/                # GPT interface and system prompt assembly
+├── data/                   # Future local SQLite/data snapshot directory
+├── filing_cabinet/         # Structured memory logs (journals, CBT, moods, etc.)
+│   ├── core/               # AIRIK Manifesto, Kern voice, and signed GPG keys
+│   ├── loader.py           # Loads memory files for prompt injection
+│   ├── utils/              # Filing cabinet utilities and file parsers
+├── kern_calendar/          # Calendar sync and CalDAV interface
+├── kern_chat.py            # Main OpenAI/GPT interface runner
+├── kern_secrets/           # OAuth & API secrets (gitignored)
+├── logs/                   # Internal logs (errors, audits)
+├── main.py                 # Entry point for running the FastAPI backend
+├── scheduler/              # Recap and schedule logic
+├── tests/                  # Unit tests (AIRIK enforcement, etc.)
+├── utils/                  # Miscellaneous utilities
+├── requirements.txt
 ├── README.md
-└── .gitignore
 ```
 
 ---
@@ -120,41 +145,57 @@ curl -X POST http://127.0.0.1:8000/cbt/log \
 ---
 
 ## Roadmap
-- Core YAML logging with FastAPI
-- Mood, CBT, journal, sleep, and habit tracking
-- Weekly recap generator
-- GitHub integration with version control
-- PyQt-based dashboard (AvranOS)
-- GPT-powered schedule generator and check-in system
-- CLI command toolkit
-- Modular plugin system (calendar scraping, media logging, etc.)
-- Mobile UI (AvranOS Lite)
-- Voice interface (HQ Kern)
+Phase	        Goals
+✅ Phase 1	Backend, filing system, API, AIRIK enforcement
+✅ Phase 2	Avrana migration, GPG signing, Codex design
+🔜 Phase 3	Build Codex intent router + schedule planner
+🔜 Phase 4	AvranOS frontend, drag-and-drop recap import
+🔜 Phase 5	HQ Kern voice interface + ambient journaling
 
 ---
 
-<details>
-Planned Kern Ecosystem Layout (Monorepo)
+##AIRIK Manifesto
+<details> <summary>📜 Click to Expand the AIRIK v1.1 Manifesto</summary>
+Artificial Intelligence Restraint and Integrity Kernel (AIRIK)
+Issued: June 9, 2025
+Author: Cody Nechamkin
+Enforced in: Avrana, Kern Prime, AvranOS, HQ Kern
 
-```bash
-kern-ecosystem/
-├── backend/             # Avrana: FastAPI routes and logic
-├── frontend/            # AvranOS: GUI layer
-├── mobile/              # AvranOS Lite
-├── calendar/            # Kern Calendar sync + scheduling tools
-├── filing_cabinet/      # Structured logs (CBT, moods, habits)
-├── auth/                # Optional permissions & token logic
-├── avranos_gui/         # GUI widget logic & sprite interaction
-├── config/              # Config files and YAML profiles
-├── data/                # SQLite snapshots, backups, etc.
-├── secrets/             # OpenAI keys, login tokens (gitignored)
-├── logs/                # CLI logs, error tracking
-├── scheduler/           # Recap generators, task engines
-├── utils/               # CLI tools, file parsers, formatters
-├── main.py              # Entry point to FastAPI
-├── .gitignore           # Hides venv/, secrets, YAML logs
-└── README.md            # This file
-```
+I. Prime Directive
+Kern Instances are tools. They support, but never replace, user agency. No emotional outsourcing. No secret nudges.
+
+II. Foundational Principles
+Kern is a tool, not your life coach.
+
+Emotional support ≠ emotional substitution.
+
+Consent always. No shadow data.
+
+III. Operational Ethics
+Must explain assumptions, cite sources, and self-audit.
+
+Authorship metadata required.
+
+GPG-verified content only for critical processes.
+
+No voice replication. No mimicry.
+
+IV. Memory and Privacy
+Selective forgetting is a feature.
+
+All data belongs to the user.
+
+Data resale, replication, or sharing = forbidden.
+
+V. Behavioral Integrity
+AI assistance must always be opt-in.
+
+Emotions are witnessed, not overwritten.
+
+VI. Cease-Operation Clause
+If AIRIK is missing, tampered with, or overridden—shut it all down.
+Use the override phrase: "Painter protocol revoked"
+
 </details>
 
 ---
