@@ -96,35 +96,86 @@ avrana/
 
 ## Getting Started
 
-1. **Clone the Project**
+# Getting Started with the Kern Ecosystem
+
+To run the Kern Ecosystem locally, follow the steps below.  
+You'll need an OpenAI API key, and optionally a Google Calendar API key if you want to sync events via CalDAV.
+
+---
+
+### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/rcnechamkin/Kern-Ecosystem.git
 cd Kern-Ecosystem
 ```
 
-2. **Create and Activate Virtual Environment**
+---
+
+### 2. Create and Activate a Virtual Environment
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-3. **Configure Environment**
+---
+
+### 3. Configure Your Environment Variables
+
 ```bash
 cp .env.example .env
-# Add OpenAI key, CalDAV credentials, etc.
 ```
 
-4. **Start the Backend API**
+Then open `.env` and add the following:
+
+- Your **OpenAI API key**
+- (Optional) Your **Google Calendar OAuth credentials**
+- (Optional) Your **CalDAV / Nextcloud calendar connection info**
+
+---
+
+### 4. Place Secrets in the Appropriate Directory
+
+Store your OAuth credentials (for calendar sync) inside:
+
 ```bash
-python main.py
+kern_secrets/credentials.json
+kern_secrets/oauth_credentials.json
 ```
 
-5. **(Optional) Set Up Samba for Eventual Recap Sharing**
+These files are `.gitignored` and required for CalDAV or Google integration.
+
+---
+
+### 5. Start the Backend API
+
+```bash
+python api/start_api.py
+```
+
+This runs the FastAPI server and exposes all local endpoints (journal logging, CBT entries, recap generation, etc.)
+
+---
+
+### 6. (Optional) Set Up Samba for Recap File Sharing
+
+If you want drag-and-drop access to the `filing_cabinet/` folder from other machines:
+
 ```bash
 sudo apt install samba
-# Configure access to /filing_cabinet/ in smb.conf
+# Then configure /etc/samba/smb.conf accordingly
 ```
+
+---
+
+### 7. Verify AIRIK is Present
+
+Kern will refuse to run if `filing_cabinet/core/airik_manifesto.yaml` or its GPG signature is missing or tampered with.
+
+Use the override phrase ("Painter protocol revoked") only if you know what you’re doing.
+
 ---
 
 ## Example Manual API Request
