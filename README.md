@@ -308,7 +308,7 @@ Kern is not a person. It does not feel. It does not replace you or anyone in you
 ---
 
 ## About the Creator
-Built by **Cody Nechamkin**, a speculative fiction writer, systems thinker, and network engineer in training. The Kern Ecosystem reflects his obsession with cognitive transparency, narrative structure, and user-defined intelligence.
+Built by **Cody Nechamkin**, a speculative fiction writer, systems thinker, and network engineer in training. The Kern Ecosystem reflects his obsession with cognitive and emotional transparency, narrative structure, and a drive to do more and be more.
 
 ---
 
