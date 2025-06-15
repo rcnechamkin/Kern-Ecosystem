@@ -26,3 +26,12 @@ Thumbs.db
 filing_cabinet/**/*.yaml
 blackboxes/uploads/
 kern_secrets/
+.env
+kern_secrets/
+
+# Local-only core config files – never commit
+filing_cabinet/core/user_identity.yaml
+filing_cabinet/core/weekly_focus.yaml
+filing_cabinet/core/priorities_and_goals.yaml
+filing_cabinet/core/current_projects.yaml
+filing_cabinet/core/media_profile.yaml
