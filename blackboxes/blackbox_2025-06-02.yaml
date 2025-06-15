@@ -6,9 +6,5 @@ data:
     date: 2025-06-04
   journals: []
   moods: []
-upcoming_calendar:
-- date: '2025-06-12'
-  name: Work
-  time: 05:30
 week_of: '2025-06-02'
 week_range: 2025-06-02 to 2025-06-08

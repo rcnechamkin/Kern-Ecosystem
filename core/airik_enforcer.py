@@ -9,7 +9,7 @@ USE_GPT_MANIFEST = True
 
 MANIFEST_FILENAME = "airik_manifesto_gpt.yaml" if USE_GPT_MANIFEST else "airik_manifesto.yaml"
 AIRIK_PATH = Path(f"filing_cabinet/core/{MANIFEST_FILENAME}")
-SIG_PATH = AIRIK_PATH.with_suffix(".yaml.asc")
+SIG_PATH = AIRIK_PATH.with_suffix(".sig")
 PUBKEY_PATH = Path("filing_cabinet/core/kern_pubkey.asc")
 
 # === Load AIRIK Manifesto ===

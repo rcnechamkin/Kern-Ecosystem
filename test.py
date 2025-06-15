@@ -1,7 +1,6 @@
-from core.llm.kern_chat import kern_chat
+import openai
+openai.api_key = "your-real-api-key"
 
-response = kern_chat([
-    {"role": "user", "content": "Why do I keep sabotaging my own momentum?"}
-])
-
-print(response.choices[0].message.content)
+models = openai.models.list()
+for model in models.data:
+    print(model.id)
