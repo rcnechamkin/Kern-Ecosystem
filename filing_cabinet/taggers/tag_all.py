@@ -21,10 +21,21 @@ TAG_FIELDS = ["tags", "summary", "emotion"]
 client = OpenAI(api_key=get_openai_key())
 
 def get_all_tag_folders() -> list:
-    return [
-        p for p in FILING_CABINET.iterdir()
-        if p.is_dir() and p.name not in SKIP_FOLDERS
-    ]
+    folders = []
+
+    for p in FILING_CABINET.iterdir():
+        if p.name in SKIP_FOLDERS or not p.is_dir():
+            continue
+        folders.append(p)
+
+        # Special handling for nested folders like media_sync
+        if p.name == "media_sync":
+            nested = p / "music"
+            if nested.exists():
+                folders.append(nested)
+
+    return folders
+
 
 def get_files_to_tag(folder: Path, retag: bool = False) -> list:
     return [
@@ -49,7 +60,7 @@ def clean_gpt_output(content: str) -> str:
 def generate_tags(content_text: str) -> dict:
     prompt = f"""You are Kern, an emotionally aware but sardonic assistant who is looking at Cody's data.
 Given the following memory entry, return a valid YAML block with:
-- tags: 3–5 lowercase keywords
+- tags: 3–5 lowercase keywords that describe tone, genre for media, and context (e.g. ambient, grief, focus, punk, roadtrip)
 - summary: 1–2 sentence summary
 - emotion: a single emotional word (optional if not present in text)
 
