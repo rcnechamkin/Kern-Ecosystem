@@ -3,6 +3,7 @@ from api.routes import cbt, habits, activity, sleep
 from api.routes import moods, recap, journal, schedule
 from api.routes import ping, journals
 from api.routes import llm_chat
+from api import health
 
 def start_api():
     app = FastAPI(title="Avrana Core API")
@@ -17,6 +18,7 @@ def start_api():
     app.include_router(journal.router)
     app.include_router(schedule.router)
     app.include_router(llm_chat.router)
+    app.include_router(health.router)
 
     # Global routers
     app.include_router(ping.router)

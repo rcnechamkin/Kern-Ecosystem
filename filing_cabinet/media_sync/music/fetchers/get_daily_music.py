@@ -19,15 +19,18 @@ OUT_PATH = os.path.join(OUT_DIR, f"Music_{TODAY}.yaml")
 os.makedirs(OUT_DIR, exist_ok=True)
 
 def fetch_tracks():
+    today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+
     params = {
         "method": "user.getrecenttracks",
         "user": USERNAME,
         "api_key": API_KEY,
         "format": "json",
         "limit": 200,
-        "from": int((datetime.now() - timedelta(hours=24)).timestamp()),
+        "from": int(today.timestamp()),
         "to": int(datetime.now().timestamp())
     }
+
     response = requests.get(BASE_URL, params=params)
     response.raise_for_status()
     data = response.json()
@@ -36,14 +39,15 @@ def fetch_tracks():
     parsed = []
     for t in tracks:
         if not t.get("date"): continue  # skip 'Now Playing'
-
         parsed.append({
             "artist": t["artist"]["#text"],
             "track": t["name"],
             "album": t.get("album", {}).get("#text", ""),
             "played_at": t["date"]["#text"]
         })
+
     return parsed
+
 
 def deduplicate(existing, new):
     seen = set()

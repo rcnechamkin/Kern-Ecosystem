@@ -47,14 +47,14 @@ def clean_gpt_output(text: str) -> str:
     return text
 
 def build_prompt(summary, top_artists, nostalgic_artists, tracks):
-    return f"""You are Kern, an emotionally intelligent assistant tasked with summarizing Cody's weekly music behavior.
+    return f"""You are Kern, an emotionally intelligent assistant tasked with summarizing Cody's music listening for today.
 You are creating a YAML block called `kern_summary` for inclusion in a memory file.
 Do not wrap your response in code blocks. No triple backticks.
 
 Consider:
-- Emotional tone of the week's listening
+- Emotional tone of today's listening
 - Overlap with Cody's nostalgic artists: {', '.join(nostalgic_artists)}
-- **Why** Cody listened: writing, recovery, new releases, artist exploration, etc.
+- **Why** Cody listened: writing, running/working out, recovery, new releases, artist exploration, etc.
 - Whether nostalgic artists released **new work** (this changes intent)
 - Don’t assume nostalgia just because the artist is familiar—look at the tracks
 - Musical variety and mood
@@ -64,7 +64,7 @@ Respond ONLY with a raw YAML block called kern_summary containing:
   purpose: why Cody likely listened (e.g. emotional reset, writing, nostalgia loop)
   emotions: list of 2–3 core emotional tones
   tone_profile: genre/style blend, with approximate weights (e.g. ambient: 40%)
-  summary: 1–2 sentence reflective analysis of Cody’s listening
+  summary: 1–2 sentence reflective analysis of Cody’s listening today
   tags: YAML list of 3–6 lowercase descriptors (e.g. - writing-mode, - ambient, - grief, - punk)
   kern_generated: AIRIK metadata block
 
@@ -78,7 +78,7 @@ Tracks:
 def run(dry=False):
     music_path = get_latest_music_file()
     if not music_path:
-        print("No weekly music file found.")
+        print("No daily music file found.")
         return
 
     music_data = load_yaml(music_path)
@@ -120,13 +120,6 @@ def run(dry=False):
         "created": datetime.now(timezone.utc).isoformat()
     }
 
-    # Mirror fields for Codex consistency
-    kern = summary_block.get("kern_summary", {})
-    if "tags" not in music_data and "tags" in kern:
-        music_data["tags"] = list(kern["tags"])
-    if "summary" not in music_data and "summary" in kern:
-        music_data["summary"] = kern["summary"]
-
     music_data.update(summary_block)
 
     if dry:
@@ -137,7 +130,7 @@ def run(dry=False):
         print(f"Summary saved to {music_path.name}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Summarize weekly Last.fm music logs with emotional tone and intent.")
+    parser = argparse.ArgumentParser(description="Summarize today's Last.fm music logs with emotional tone and intent.")
     parser.add_argument("--dry", action="store_true", help="Print summary without saving")
     args = parser.parse_args()
     run(dry=args.dry)
