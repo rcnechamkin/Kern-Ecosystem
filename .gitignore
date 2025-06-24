@@ -1,3 +1,9 @@
+# Sensitive or raw exports
+filing_cabinet/health/raw_exports/
+filing_cabinet/health/nohup.out
+blackboxes/*.save
+kern_calendar/calendar_test.yaml
+
 # Python artifacts
 __pycache__/
 *.py[cod]
@@ -47,3 +53,5 @@ media/
 
 # Services (Komga, future docker, etc.)
 services/
+scripts/
+configs/
