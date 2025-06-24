@@ -1,0 +1,70 @@
+{
+  "data": {
+    "workouts": [
+      {
+        "start": "2025-06-22 17:22:53 -0700",
+        "duration": 1740,
+        "name": "Run",
+        "activeEnergyBurned": {
+          "qty": 119.45230828878539,
+          "units": "kcal"
+        },
+        "id": "9C68A921-34F4-4445-8BF0-A921ABB2FBED",
+        "end": "2025-06-22 17:51:53 -0700",
+        "distance": {
+          "qty": 1.25,
+          "units": "mi"
+        },
+        "metadata": {}
+      },
+      {
+        "activeEnergyBurned": {
+          "qty": 217.2183464952143,
+          "units": "kcal"
+        },
+        "distance": {
+          "qty": 1.949692008594963,
+          "units": "mi"
+        },
+        "end": "2025-06-22 13:50:08 -0700",
+        "duration": 1953.999,
+        "id": "2AEAEC68-E10B-4C8C-9DE1-83C775F577D6",
+        "start": "2025-06-22 13:17:34 -0700",
+        "name": "Run",
+        "metadata": {}
+      },
+      {
+        "duration": 1957,
+        "metadata": {},
+        "end": "2025-06-19 15:58:51 -0700",
+        "distance": {
+          "qty": 1.914039846879213,
+          "units": "mi"
+        },
+        "activeEnergyBurned": {
+          "qty": 211.37913796766725,
+          "units": "kcal"
+        },
+        "start": "2025-06-19 15:26:14 -0700",
+        "id": "A5A354FF-FC3F-4815-AC24-3D39A98B69DF",
+        "name": "Run"
+      },
+      {
+        "activeEnergyBurned": {
+          "units": "kcal",
+          "qty": 150.33884047201167
+        },
+        "end": "2025-06-17 15:51:04 -0700",
+        "name": "Run",
+        "start": "2025-06-17 15:18:29 -0700",
+        "distance": {
+          "units": "mi",
+          "qty": 1.880984641477457
+        },
+        "metadata": {},
+        "duration": 1954.999,
+        "id": "C961E78A-B86E-4242-B872-075078A00FA5"
+      }
+    ]
+  }
+}
