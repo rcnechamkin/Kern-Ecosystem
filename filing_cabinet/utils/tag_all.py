@@ -20,21 +20,10 @@ TAG_FIELDS = ["tags", "summary", "emotion"]
 
 client = OpenAI(api_key=get_openai_key())
 
+TARGET_FOLDERS = {"journals", "cbt", "week_summaries"}
+
 def get_all_tag_folders() -> list:
-    folders = []
-
-    for p in FILING_CABINET.iterdir():
-        if p.name in SKIP_FOLDERS or not p.is_dir():
-            continue
-        folders.append(p)
-
-        # Special handling for nested folders like media_sync
-        if p.name == "media_sync":
-            nested = p / "music"
-            if nested.exists():
-                folders.append(nested)
-
-    return folders
+    return [FILING_CABINET / folder for folder in TARGET_FOLDERS if (FILING_CABINET / folder).exists()]
 
 
 def get_files_to_tag(folder: Path, retag: bool = False) -> list:
