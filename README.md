@@ -23,7 +23,7 @@ This repository is the **master hub** of the Kern Ecosystem.
 - **Kern Prime** — The cognitive core. A conversational layer powered by GPT-4o or GPT-3.5 that responds with insight, wit, and CBT-informed coaching based on structured logs.
 - **AvranOS Lite** — A future mobile or lightweight UI built for quick entries and portable logging.
 - **Kern Calendar** — Calendar + task syncing layer powered by CalDAV (Nextcloud or similar).
-- **HQ Kern** — Optional Raspberry Pi-based voice interface for ambient logging, commands, and verbal summaries.
+- **HQ Kern** — Raspberry Pi-based voice interface for "Smart House" controls and ambient logging, commands, and verbal summaries. The ultimate Alexa-killer.
 
 ---
 
