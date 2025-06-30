@@ -214,7 +214,7 @@ curl -X POST http://127.0.0.1:8000/cbt/log \
 
 ## AIRIK – Summary of the Ethical Core
 
-**AIRIK** is the ethical backbone of the Kern Ecosystem. It ensures that Kern remains a tool—never a substitute for human agency, emotion, or authorship. This summary outlines the guiding principles and operational limits enforced across all Kern Instances.
+**AIRIK** is the ethical backbone of the Kern Ecosystem. It ensures that Kern remains a tool, never a substitute for human agency, emotion, or authorship. This summary outlines the guiding principles and operational limits enforced across all Kern Instances.
 
 <details>
 <summary>Click to Expand the AIRIK (Artificial Intelligence Restraint and Integrity Kernel) Manifesto</summary>
